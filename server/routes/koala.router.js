@@ -15,7 +15,7 @@ koalaRouter.post('/', (req, res)=>{
     
     const sqlQuery = `
     INSERT INTO "koala"
-        ("name", "gender", "age", "readyToTransfer", "notes")
+        ("name", "gender", "age", "readyForTransfer", "notes")
     VALUES
         ($1, $2, $3, $4, $5);
 `; 
@@ -23,7 +23,7 @@ const sqlParams = [
     req.body.name,        
     req.body.gender,         
     Number(req.body.age),     
-    req.body.readyToTransfer,
+    req.body.readyForTransfer,
     req.body.notes           
 ];
 console.log(sqlQuery);
@@ -57,7 +57,7 @@ koalaRouter.put('/:id', (req, res) => {
 
     const sqlQuery = `
     UPDATE koala
-    SET "readyToTransfer" = $2
+    SET "readyForTransfer" = $2
     WHERE id = $1;
     `
 

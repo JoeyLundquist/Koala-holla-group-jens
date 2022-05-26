@@ -58,20 +58,16 @@ function saveKoala( newKoala ){
 
  
 
-
-
-}
-
 function updateKoalaTransferStatus() {
   console.log('In Koalas PUT')
   const koalaId = $(this).parents('tr').data('koala-id')
   console.log('Koala Id is', koalaId)
 
-  let readyToTransfer  = $(this).parents('td').data('ready-to-transfer');
-  console.log('ready to transfer?', readyToTransfer)
+  let readyForTransfer  = $(this).parents('td').data('ready-to-transfer');
+  console.log('ready to transfer?', readyForTransfer)
 
   let changeTransferStatus = {
-    transferStatus: readyToTransfer
+    transferStatus: readyForTransfer
   }
 
   
