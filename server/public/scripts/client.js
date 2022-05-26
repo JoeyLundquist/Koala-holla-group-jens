@@ -39,11 +39,11 @@ function getKoalas(){
       for (let i = 0; i < response.length; i++) {
           $('#viewKoalas').append(`
           <tr data-koala-id="${response[i].id}">
-              <td>${response.name[i].name}</td>
-              <td>${response.name[i].age}</td>
-              <td>${response.name[i].gender}</td>
-              <td>${response.name[i].readyForTransfer}</td>
-              <td>${response.name[i].notes}</td>
+              <td>${response[i].name}</td>
+              <td>${response[i].age}</td>
+              <td>${response[i].gender}</td>
+              <td>${response[i].readyForTransfer}</td>
+              <td>${response[i].notes}</td>
               <td>
                   <button class="deleteAKoala">❌ 🐨 </button>
               </td>
