@@ -48,7 +48,7 @@ function getKoalas(){
               <td>${response[i].name}</td>
               <td>${response[i].age}</td>
               <td>${response[i].gender}</td>
-              <td>${response[i].readyForTransfer}<button class="update-koala-btn">Ready to Transfer?</button?</td>
+              <td data-ready-to-transfer="${response[i].readyForTransfer}">${response[i].readyForTransfer}<button class="update-koala-btn">Ready to Transfer?</button?</td>
               <td>${response[i].notes}</td>
               <td>
                   <button class="deleteButton">❌ 🐨 </button>
