@@ -16,11 +16,11 @@ function setupClickListeners() {
     // NOT WORKING YET :(
     // using a test object
     let koalaToSend = {
-      name: 'testName',
-      age: 'testName',
-      gender: 'testName',
-      readyForTransfer: 'testName',
-      notes: 'testName',
+      name: $('#nameIn').val(),
+      age: $('#ageIn').val(),
+      gender: $('#genderIn').val(),
+      readyForTransfer: true,
+      notes: $('#notesIn').val()
     };
     // call saveKoala with the new obejct
     saveKoala( koalaToSend );
@@ -41,8 +41,10 @@ function saveKoala( newKoala ){
     data: newKoala,
   }).then(()=>{
     console.log('POST works');
+    getKoalas();
+
   }).catch((err) => {
-    alert('Failed to delete add koalas');
+    alert('Failed to add koalas');
     console.log('POST failed:', err);
   });
 

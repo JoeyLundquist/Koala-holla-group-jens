@@ -15,14 +15,14 @@ koalaRouter.post('/', (req, res)=>{
     
     const sqlQuery = `
     INSERT INTO "koala"
-        (name, gender, age, "readyToTransfer", notes)
+        ("name", "gender", "age", "readyToTransfer", "notes")
     VALUES
         ($1, $2, $3, $4, $5);
 `; 
 const sqlParams = [
     req.body.name,        
     req.body.gender,         
-    req.body.age,     
+    Number(req.body.age),     
     req.body.readyToTransfer,
     req.body.notes           
 ];
