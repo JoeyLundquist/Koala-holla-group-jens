@@ -25,6 +25,7 @@ function setupClickListeners() {
     // call saveKoala with the new obejct
     saveKoala( koalaToSend );
   }); 
+  $(document).on('click', '.deleteButton', deleteKoala);
 }
 
 function getKoalas(){
@@ -38,3 +39,30 @@ function saveKoala( newKoala ){
   // ajax call to server to get koalas
  
 }
+
+function deleteKoala() {
+  const koalaId = $(this).parents('tr').data('koala-id');
+
+  console.log('in deleteKoala()', koalaId);
+
+  $.ajax({
+      method: 'DELETE',
+      url: `/koalas/${koalaId}`,       
+  })
+      .then(() => {
+          getKoalas()
+          console.log('DELETE /koala success');
+      })
+      .catch((err) => {
+          alert('Failed to delete.');
+          console.log('DELETE /koala failed:', err);
+      });
+}
+
+// Code to append in juan's project
+
+/* <tr data-koala-id="${koala.id}" >
+
+<td>
+          <button class="deleteButton">❌</button>
+      </td> */
