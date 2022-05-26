@@ -1,4 +1,5 @@
 const express = require('express');
+const pool = require('../modules/pool')
 const koalaRouter = express.Router();
 const pool = require('../modules/pool')
 
