@@ -7,5 +7,4 @@ const pool = new pg.Pool({
     database: 'koala_homes'
 });
 
-
 module.exports = pool;
