@@ -48,10 +48,10 @@ function getKoalas(){
               <td>${response[i].name}</td>
               <td>${response[i].age}</td>
               <td>${response[i].gender}</td>
-              <td>${response[i].readyForTransfer}</td>
+              <td data-ready-to-transfer="${response[i].readyForTransfer}">${response[i].readyForTransfer}<button class="update-koala-btn">Ready to Transfer?</button?</td>
               <td>${response[i].notes}</td>
               <td>
-                  <button class="deleteAKoala">❌ 🐨 </button>
+                  <button class="deleteButton">❌ 🐨 </button>
               </td>
           </tr>
         `);
@@ -92,7 +92,7 @@ function updateKoalaTransferStatus() {
 
   
   $.ajax({
-    url:'/koala/' + koalaId,
+    url:'/koalas/' + koalaId,
     method: 'PUT',
     data: changeTransferStatus
   })
