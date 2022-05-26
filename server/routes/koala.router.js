@@ -12,7 +12,7 @@ const pool = require('../modules/pool')
 
 
 // PUT
-
+koalaRouter.put()
 
 // DELETE
 
