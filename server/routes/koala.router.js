@@ -1,11 +1,11 @@
 const express = require('express');
 const koalaRouter = express.Router();
-
+const pool = require('../modules/pool')
 // DB CONNECTION
 
 
 // GET
-router.get('/', (req, res) => {{
+koalaRouter.get('/', (req, res) => {{
     const sqlQuery = `
         SELECT * FROM koala
         ORDER BY "name" ASC
@@ -13,8 +13,8 @@ router.get('/', (req, res) => {{
 
     pool.query(sqlQuery)
         .then((dbRes) => {
-            console.log('DB request success', dbRes);
-            res.send(dbRes);
+            console.log('DB request success', dbRes.rows);
+            res.send(dbRes.rows);
         })
         .catch((err) => {
             console.log(`DB request failed`, err);
