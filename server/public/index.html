@@ -5,6 +5,8 @@
     <title>Koalla Holla</title>
     <script src="vendors/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" type="text/css" href="./views/style.css">
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" type="text/css" href="views/styles.css">
@@ -20,8 +22,20 @@
       <h2>Add Koala</h2>
       <input type="text" id="nameIn" value="" placeholder="Name">
       <input type="number" id="ageIn" value="" placeholder="Age">
-      <input type="text" id="genderIn" value="" placeholder="Gender">
-      <input type="text" id="readyForTransferIn" value="" placeholder="Transfer">
+      <div class="radio-container">
+        <label>Gender:</label><br>
+        <input type="radio" class="radio-button" value="M" name="gender">
+        <label for="M">Male</label><br>
+        <input type="radio" radio-button value="F" name="gender">
+        <label for="F">Female</label>
+      </div>
+      <div class="radio-container">
+        <label>Ready For Transfer:</label><br>
+        <input type="radio" id="ready-for-transfer-true" value="True" name="readyForTransfer">
+        <label for="True">True</label><br>
+        <input type="radio" id="ready-for-transfer-false" value="False" name="readyForTransfer">
+        <label for="False">False</label>
+      </div>
       <input type="text" id="notesIn" value="" placeholder="Notes">
       <button type="button" id="addButton">Add Koala</button>
     </section>
