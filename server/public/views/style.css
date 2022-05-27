@@ -1,0 +1,9 @@
+.radio-container {
+    display: inline-block;
+    width: 175x;
+    height: 100px;
+}
+
+.radio-button {
+    text-align: left;
+}

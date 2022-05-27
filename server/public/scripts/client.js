@@ -18,8 +18,8 @@ function setupClickListeners() {
     let koalaToSend = {
       name: $('#nameIn').val(),
       age: $('#ageIn').val(),
-      gender: $('#genderIn').val(),
-      readyForTransfer: true,
+      gender: $("input[name='gender']:checked").val(),
+      readyForTransfer: $("input[name='readyForTransfer']:checked").val(),
       notes: $('#notesIn').val()
     };
     // call saveKoala with the new obejct

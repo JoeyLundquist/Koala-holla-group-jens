@@ -1,3 +1,4 @@
+--Run this Code First to create table
 CREATE TABLE "koala" (
 "id" SERIAL PRIMARY KEY,
 "name" VARCHAR(25) NOT NULL,
@@ -7,6 +8,8 @@ CREATE TABLE "koala" (
 "notes" VARCHAR(120)
 );
 
+
+--Run this code Next for current list
 INSERT INTO "koala"
 ("name", "gender", "age", "readyForTransfer", "notes")
 VALUES
@@ -17,4 +20,6 @@ VALUES
 ('Charlie', 'M', 9, true, 'fav band Nirvana'),
 ('Betsy', 'F', 4, true, 'Has a pet Iguana');
 
+
+--This code will allow you to be able to see your table within Postico SQL Query section
 SELECT * FROM koala;
