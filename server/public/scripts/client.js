@@ -111,19 +111,39 @@ function deleteKoala() {
 
   console.log('in deleteKoala()', koalaId);
 
-  $.ajax({
-      method: 'DELETE',
-      url: `/koalas/${koalaId}`,       
-  })
-      .then(() => {
-          getKoalas()
-          console.log('DELETE /koala success');
+  Swal.fire({
+    title: 'Are you sure you want to delete this koala?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+      $.ajax({
+        method: 'DELETE',
+        url: `/koalas/${koalaId}`,       
       })
-      .catch((err) => {
-          alert('Failed to delete.');
-          console.log('DELETE /koala failed:', err);
-      });
-}
+        .then(() => {
+            getKoalas()
+            console.log('DELETE /koala success');
+        })
+        .catch((err) => {
+            alert('Failed to delete.');
+            console.log('DELETE /koala failed:', err);
+        });
+      }
+    });
+  }
+
+
+
 
 // Code to append in juan's project
 
